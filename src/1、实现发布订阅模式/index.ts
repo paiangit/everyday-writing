@@ -1,6 +1,5 @@
 /**
  * 使用JS实现发布订阅模式
- * 例如，a为发布者， b、c为订阅者
  */
 type Handler = (params: unknown) => void;
 
@@ -8,7 +7,7 @@ interface Handlers {
   [prop: string]: Array<Handler|null>;
 }
 
-export class Emitter {
+export class Event {
   handlers: Handlers = {};
 
   on(type: string, handler: Handler) {
@@ -20,13 +19,13 @@ export class Emitter {
   }
 
   off(type: string, handler: Handler) {
-    if (!this.handlers[type]) {
-      throw new Error('未注册该事件');
-    }
-
     if (!handler) {
       delete this.handlers[type];
       return;
+    }
+
+    if (!this.handlers[type]) {
+      throw new Error('未绑定该事件');
     }
 
     const idx = this.handlers[type].indexOf(handler);
@@ -51,19 +50,19 @@ export class Emitter {
   }
 }
 
-const a = new Emitter();
+// const eventBus = new Event();
 
-const b = (params: unknown) => {
-  console.log('B recieved', params);
-};
+// const b = (params: unknown) => {
+//   console.log('B recieved', params);
+// };
 
-const c = (params: unknown) => {
-  console.log('C recieved', params);
-};
+// const c = (params: unknown) => {
+//   console.log('C recieved', params);
+// };
 
-a.on('publish', b);
-a.on('publish', c);
-a.emit('publish', 'message 1');
-a.off('publish', b);
-a.off('publish', c);
-a.emit('publish', 'message 1');
+// eventBus.on('publish', b);
+// eventBus.on('publish', c);
+// eventBus.emit('publish', 'message 1');
+// eventBus.off('publish', b);
+// eventBus.off('publish', c);
+// eventBus.emit('publish', 'message 2');
