@@ -1,0 +1,23 @@
+{
+  "name": "everyday-writing",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc --watch --project tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paiangit/everyday-writing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paiangit/everyday-writing/issues"
+  },
+  "homepage": "https://github.com/paiangit/everyday-writing#readme",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
