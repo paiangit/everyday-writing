@@ -11,7 +11,6 @@ export class Subject {
 
   remove(observer: Observer) {
     const idx = this.observers.indexOf(observer);
-    console.log(idx, this.observers)
 
     if (idx === -1) {
       throw new Error('没有该observer');
@@ -39,14 +38,13 @@ export class Observer {
   }
 }
 
-const a = new Subject();
-const b = new Observer('B');
-const c = new Observer('C');
-const d = new Observer('d');
+// const a = new Subject();
+// const b = new Observer('B');
+// const c = new Observer('C');
 
-a.add(b);
-a.add(c);
-a.notify();
-a.remove(b);
-a.remove(c);
-a.notify();
+// a.add(b);
+// a.add(c);
+// a.notify();
+// a.remove(b);
+// a.remove(c);
+// a.notify();
