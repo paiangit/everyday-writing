@@ -1,4 +1,4 @@
-import { Event } from './';
+import { Event } from '.';
 
 describe('Event', () => {
   const eventBus = new Event();

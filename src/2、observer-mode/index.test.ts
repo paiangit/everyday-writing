@@ -1,4 +1,4 @@
-import { Subject, Observer } from './';
+import { Subject, Observer } from '.';
 
 describe('Subject', () => {
   let subject: Subject;
